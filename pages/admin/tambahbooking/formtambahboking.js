@@ -1,6 +1,6 @@
 import React from 'react'
-import TambahBokingForm from '../../components/forms/tambahbokingform'
-import Layout from '../../components/utils/layout'
+import Layout from '../../../components/admincomponent/utils/layout'
+import TambahBokingForm from '../../../components/admincomponent/booking/tambahbokingform'
 
 
 export default function FormTambahBoking() {

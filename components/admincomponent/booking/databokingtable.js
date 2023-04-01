@@ -17,7 +17,7 @@ export default function DataBokingTable() {
                                         <div className="d-flex bd-highlight">
                                             <div className="p-2 flex-grow-1 bd-highlight">Admin</div>
                                             <div className="p-2 bd-highlight">
-                                            <Link href="/admin/formtambahboking">
+                                            <Link href="/admin/tambahbooking/formtambahboking">
                                                     <button className='btn btn-primary'>Tambah Data</button>
                                                 </Link>
                                             </div>

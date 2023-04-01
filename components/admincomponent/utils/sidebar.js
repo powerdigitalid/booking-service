@@ -9,14 +9,14 @@ export default function Sidebar() {
       </a>
       <hr className="sidebar-divider my-0" />
       <li className="nav-item active">
-        <Link className="nav-link" href="/admin/dashboard">
+        <Link className="nav-link" href="/admin">
           <i className="fas fa-fw fa-tachometer-alt" />
           <span>Dashboard</span>
         </Link>
       </li>
       <hr className="sidebar-divider" />
       <li className="nav-item">
-        <Link className="nav-link" href="/admin/tambahboking">
+        <Link className="nav-link" href="/admin/tambahbooking">
           <i className="fas fa-solid fa-list-ol" />
           <span>Tambah Boking</span>
         </Link>
