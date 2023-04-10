@@ -18,7 +18,7 @@ export default function DataBokingTable() {
                                             <div className="p-2 flex-grow-1 bd-highlight">Admin</div>
                                             <div className="p-2 bd-highlight">
                                             <Link href="/admin/tambahbooking/formtambahboking">
-                                                    <button className='btn btn-primary'>Tambah Data</button>
+                                                    <button className='btn btn-primary'>Input Booking</button>
                                                 </Link>
                                             </div>
                                         </div>
@@ -47,10 +47,9 @@ export default function DataBokingTable() {
                                                             <td className="text-nowrap align-middle">12-11-2021</td>
                                                             <td className="text-nowrap align-middle">0812211212</td>
                                                             <td className="text-center align-middle">
-                                                                <div className="align-top">
-                                                                    <button className='btn btn-primary mr-2'>Edit</button>
-                                                                    <button className='btn btn-danger' >Hapus</button>
-
+                                                                <div className="align-top"> 
+                                                                    <button className='btn btn-success mr-2' >Edit</button>
+                                                                    <button className='btn btn-danger'>Hapus</button>
                                                                 </div>
                                                             </td>
                                                         </tr>

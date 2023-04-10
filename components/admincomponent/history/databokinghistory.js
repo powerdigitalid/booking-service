@@ -24,6 +24,7 @@ export default function DataBokingHistory() {
                                                                 <th className="sortable">Jenis Mobil</th>
                                                                 <th className="sortable">Tanggal</th>
                                                                 <th className="sortable">Telp.</th>
+                                                                <th className="sortable">Action</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
@@ -33,6 +34,11 @@ export default function DataBokingHistory() {
                                                                 <td className="text-nowrap align-middle">BMW</td>
                                                                 <td className="text-nowrap align-middle">12-11-2021</td>
                                                                 <td className="text-nowrap align-middle">0812211212</td>
+                                                                <td className="text-nowrap align-middle">
+                                                                    <div className="align-top">
+                                                                        <button className='btn btn-danger'>Hapus</button>
+                                                                    </div>
+                                                                </td>
                                                             </tr>
                                                         </tbody>
                                                     </table>
