@@ -10,20 +10,19 @@ export default function Sidebar() {
       <hr className="sidebar-divider my-0" />
       <li className="nav-item active">
         <Link className="nav-link" href="/admin">
-          <i className="fas fa-fw fa-tachometer-alt" />
+          {/* <i className="fas fa-fw fa-tachometer-alt" /> */}
           <span>Dashboard</span>
         </Link>
       </li>
-      <hr className="sidebar-divider" />
       <li className="nav-item">
         <Link className="nav-link" href="/admin/tambahbooking">
-          <i className="fas fa-solid fa-list-ol" />
+          {/* <i className="fas fa-solid fa-list-ol" /> */}
           <span>Tambah Boking</span>
         </Link>
       </li>
       <li className="nav-item">
         <Link className="nav-link" href="/admin/history">
-          <i className="fas fa-fw fa-table" />
+          {/* <i className="fas fa-fw fa-table" /> */}
           <span>History</span>
         </Link>
       </li>
