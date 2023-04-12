@@ -7,7 +7,9 @@ export default function Layout({ children }) {
       <Navbar />
       <div className="container-fluid page-body-wrapper">
         <Sidebar />
-        {children}
+        <div className="main-panel">
+          <div className="content-wrapper">{children}</div>
+        </div>
       </div>
     </div>
   );
