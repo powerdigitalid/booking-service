@@ -27,7 +27,7 @@ export default function DataBokingHistory() {
                 <td>1 Hari</td>
                 <td>1</td>
                 <td>
-                  <label className="badge badge-danger">Delete</label>
+                  <label className="btn btn-danger">Delete</label>
                 </td>
               </tr>
             </tbody>

@@ -28,7 +28,7 @@ export default function DataBokingTable() {
                 <td>1 Hari</td>
                 <td>1</td>
                 <td>
-                  <label className="badge badge-danger">Pending</label>
+                  <label className="btn btn-danger">Hapus</label>
                 </td>
               </tr>
             </tbody>

@@ -28,7 +28,7 @@ export default function Sidebar() {
           </Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" href="/user">
+          <Link className="nav-link" href="/admin/user">
             <i className="icon-head menu-icon" />
             <span className="menu-title">User</span>
           </Link>
