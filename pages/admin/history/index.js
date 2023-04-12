@@ -1,10 +1,10 @@
-import Layout from "../../../components/admincomponent/utils/layout";
-import DataBokingHistory from "../../../components/admincomponent/history/databokinghistory";
+import Layout from "../../../components/adminpage/utils/layout";
+import BookingHistory from "../../../components/adminpage/history/bookinghistory";
 
-export default function TambahBoking(){
+export default function TambahBooking(){
     return(
         <Layout>
-            <DataBokingHistory />
+            <BookingHistory />
         </Layout>
     )
 }

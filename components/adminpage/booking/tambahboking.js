@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React from "react";
-import Card from "../../admincomponent/utils/card";
 
 export default function TambahBokingForm() {
   return (
@@ -15,92 +14,74 @@ export default function TambahBokingForm() {
                 htmlFor="exampleInputUsername2"
                 className="col-sm-3 col-form-label"
               >
-                Email
+                Name
               </label>
               <div className="col-sm-9">
                 <input
                   type="text"
                   className="form-control"
-                  id="exampleInputUsername2"
-                  placeholder="Username"
+                  id="name"
+                  placeholder="Name"
                 />
               </div>
             </div>
             <div className="form-group row">
-              <label
-                htmlFor="exampleInputEmail2"
-                className="col-sm-3 col-form-label"
-              >
-                Email
+              <label htmlFor="tanggal" className="col-sm-3 col-form-label">
+                Tanggal
               </label>
               <div className="col-sm-9">
                 <input
-                  type="email"
+                  type="date"
                   className="form-control"
-                  id="exampleInputEmail2"
-                  placeholder="Email"
+                  id="tanggal"
+                  placeholder="Tanggal"
                 />
               </div>
             </div>
             <div className="form-group row">
-              <label
-                htmlFor="exampleInputMobile"
-                className="col-sm-3 col-form-label"
-              >
-                Mobile
+              <label htmlFor="keterangan" className="col-sm-3 col-form-label">
+                Keterangan
               </label>
               <div className="col-sm-9">
                 <input
-                  type="text"
+                  type="textarea"
                   className="form-control"
-                  id="exampleInputMobile"
+                  id="keterangan"
                   placeholder="Mobile number"
                 />
               </div>
             </div>
             <div className="form-group row">
-              <label
-                htmlFor="exampleInputPassword2"
-                className="col-sm-3 col-form-label"
-              >
-                Password
+              <label htmlFor="lama" className="col-sm-3 col-form-label">
+                Lama Pengerjaan
               </label>
               <div className="col-sm-9">
                 <input
-                  type="password"
+                  type="number"
                   className="form-control"
-                  id="exampleInputPassword2"
-                  placeholder="Password"
+                  id="lama"
+                  placeholder="Lama Pengerjaan"
                 />
               </div>
             </div>
             <div className="form-group row">
-              <label
-                htmlFor="exampleInputConfirmPassword2"
-                className="col-sm-3 col-form-label"
-              >
-                Re Password
+              <label htmlFor="antrian" className="col-sm-3 col-form-label">
+                Antrian Ke
               </label>
               <div className="col-sm-9">
-                <input
-                  type="password"
-                  className="form-control"
-                  id="exampleInputConfirmPassword2"
-                  placeholder="Password"
-                />
+                <select
+                  className="form-control form-control-sm"
+                  id="antrian"
+                >
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                </select>
               </div>
             </div>
-            <div className="form-check form-check-flat form-check-primary">
-              <label className="form-check-label">
-                <input type="checkbox" className="form-check-input" />
-                Remember me
-                <i className="input-helper" />
-              </label>
-            </div>
             <button type="submit" className="btn btn-primary mr-2">
-              Submit
+              Tambahkan
             </button>
-            <button className="btn btn-light">Cancel</button>
           </form>
         </div>
       </div>

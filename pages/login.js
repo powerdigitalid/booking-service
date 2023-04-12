@@ -1,10 +1,10 @@
 import React from 'react'
-import LoginBoking from '../components/forms/loginboking'
+import LoginComponent from '../components/adminpage/login'
 
 export default function Login() {
   return (
     <div>
-        <LoginBoking />
+        <LoginComponent />
     </div>
   )
 }

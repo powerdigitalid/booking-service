@@ -1,11 +1,10 @@
-import Link from "next/link";
 import React from "react";
 
-export default function DataBokingTable() {
+export default function DataBokingHistory() {
   return (
     <div className="card">
       <div className="card-body">
-        <h4 className="card-title">Tabel Booking</h4>
+        <h4 className="card-title">Tabel History</h4>
         <div className="table-responsive">
           <table className="table table-hover">
             <thead>
@@ -28,7 +27,7 @@ export default function DataBokingTable() {
                 <td>1 Hari</td>
                 <td>1</td>
                 <td>
-                  <label className="badge badge-danger">Pending</label>
+                  <label className="badge badge-danger">Delete</label>
                 </td>
               </tr>
             </tbody>

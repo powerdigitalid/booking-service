@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-import AdminScripts from '../components/admincomponent/utils/scripts'
+import AdminScripts from '../components/adminpage/utils/scripts'
 import HomeScripts from '../components/landingpage/scripts'
 export default function Document() {
   return (
