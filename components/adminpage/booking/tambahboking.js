@@ -3,18 +3,17 @@ import React from "react";
 
 export default function TambahBokingForm() {
   return (
-    <div className="col-md-6 grid-margin stretch-card">
+    <div className="col-md-12 grid-margin stretch-card">
       <div className="card">
         <div className="card-body">
-          <h4 className="card-title">Horizontal Form</h4>
-          <p className="card-description">Horizontal form layout</p>
+          <h4 className="card-title">Tambah Booking</h4>
           <form className="forms-sample">
             <div className="form-group row">
               <label
                 htmlFor="exampleInputUsername2"
                 className="col-sm-3 col-form-label"
               >
-                Name
+                Nama
               </label>
               <div className="col-sm-9">
                 <input

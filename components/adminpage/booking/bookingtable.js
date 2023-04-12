@@ -10,7 +10,7 @@ export default function DataBokingTable() {
           <table className="table table-hover">
             <thead>
               <tr>
-                <th>Name</th>
+                <th>Nama</th>
                 <th>Tanggal</th>
                 <th>Keterangan</th>
                 <th>Lama Pengerjaan</th>
