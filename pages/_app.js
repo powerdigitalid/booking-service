@@ -1,6 +1,8 @@
-import '../public/dist/css/fontawesome/all.min.css'
-import '../public/dist/css/sb-admin-2.min.css'
-import '../public/dist/css/dataTables.bootstrap4.min.css'
+// admin page assets
+import '../public/dist/admin/vendors/feather/feather.css'
+import '../public/dist/admin/vendors/ti-icons/css/themify-icons.css'
+import '../public/dist/admin/vendors/css/vendor.bundle.base.css'
+import '../public/dist/admin/css/vertical-layout-light/style.css'
 
 // landing page assets
 import '../public/dist/css/bootstrap.min.css'
