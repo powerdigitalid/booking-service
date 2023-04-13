@@ -1,4 +1,6 @@
-// conection prisma to mysql database
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -8,24 +10,16 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// models
 model User {
   id        Int      @id @default(autoincrement())
-  name      String
-  email     String   @unique
-  password  String
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  posts     Post[]
+  email     String   @unique
+  name      String?
 }
 
-model Post {
+model dummy {
   id        Int      @id @default(autoincrement())
-  title     String
-  content   String
-  published Boolean  @default(false)
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  author    User     @relation(fields: [authorId], references: [id])
-  authorId  Int
+  email     String   @unique
+  name      String?
 }
