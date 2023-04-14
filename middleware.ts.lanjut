@@ -1,0 +1,22 @@
+import { NextRequest, NextResponse } from 'next/server';
+import Jwt from 'jsonwebtoken';
+
+export async function middleware(req, res) {
+  const token = req.body.token || req.query.token || req.headers['x-access-token'] || req.headers['authorization'];
+  if (token) {
+    Jwt.verify(token, process.env.SECRET, function (err, decoded) {
+      if (err) {
+        res.status(403).json({ message: "Gagal autentikasi token" });
+      } else {
+        req.decoded = decoded;
+        NextResponse.next();
+      }
+    });
+  } else {
+    return res.status(403).json({ message: "Tidak ada token tersedia" });
+  }
+}
+
+export const config = {
+  matcher: ['/api/user/:path*'],
+};
