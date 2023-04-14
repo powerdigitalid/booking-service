@@ -1,12 +1,12 @@
 import React from 'react'
-import Formuser from '../../../components/admincomponent/user/formuser'
+import Tableuser from '../../../components/adminpage/user/tableuser'
 import Layout from '../../../components/adminpage/utils/layout'
 
 export default function index() {
   return (
     <div>
         <Layout>
-            <Formuser />
+            <Tableuser />
         </Layout>
     </div>
   )

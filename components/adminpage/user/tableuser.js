@@ -15,8 +15,9 @@ export default function Formuser() {
                         <table className="table table-hover">
                             <thead>
                                 <tr>
-                                    <th>Nama User</th>
+                                    <th>Username</th>
                                     <th>Password</th>
+                                    <th>Nama Lengkap</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -24,6 +25,7 @@ export default function Formuser() {
                                 <tr>
                                     <td>Danang123</td>
                                     <td>123danang</td>
+                                    <td>danang sudanang</td>
                                     <td>
                                         <button className="btn btn-success mr-2">Edit</button>
                                         <button className="btn btn-danger">Delete</button>

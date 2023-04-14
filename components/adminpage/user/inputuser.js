@@ -15,27 +15,43 @@ export default function Inputuser() {
                                     htmlFor="exampleInputUsername2"
                                     className="col-sm-3 col-form-label"
                                 >
-                                    Nama
+                                    Username
                                 </label>
                                 <div className="col-sm-9">
                                     <input
                                         type="text"
                                         className="form-control"
-                                        id="name"
-                                        placeholder="Name"
+                                        id="Username"
+                                        placeholder="Username"
                                     />
                                 </div>
                             </div>
                             <div className="form-group row">
-                                <label htmlFor="tanggal" className="col-sm-3 col-form-label">
-                                    Tanggal
+                                <label
+                                    htmlFor="exampleInputUsername2"
+                                    className="col-sm-3 col-form-label"
+                                >
+                                    Password
                                 </label>
                                 <div className="col-sm-9">
                                     <input
-                                        type="date"
+                                        type="password"
                                         className="form-control"
-                                        id="tanggal"
-                                        placeholder="Tanggal"
+                                        id="Password"
+                                        placeholder="Password"
+                                    />
+                                </div>
+                            </div>
+                            <div className="form-group row">
+                                <label htmlFor="Nama" className="col-sm-3 col-form-label">
+                                    Nama Lengkap
+                                </label>
+                                <div className="col-sm-9">
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        id="Nama"
+                                        placeholder="Nama"
                                     />
                                 </div>
                             </div>
