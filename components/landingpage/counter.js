@@ -21,7 +21,7 @@ export default function Counter() {
                       0
                     </span>
                   </h2>
-                  <h3 className="ts-facts-title">Total Projects</h3>
+                  <h3 className="ts-facts-title">Total Pelanggan</h3>
                 </div>
               </div>
               {/* Col end */}
@@ -39,7 +39,7 @@ export default function Counter() {
                       0
                     </span>
                   </h2>
-                  <h3 className="ts-facts-title">Staff Members</h3>
+                  <h3 className="ts-facts-title">Anggota Karyawan</h3>
                 </div>
               </div>
               {/* Col end */}
@@ -57,7 +57,7 @@ export default function Counter() {
                       0
                     </span>
                   </h2>
-                  <h3 className="ts-facts-title">Hours of Work</h3>
+                  <h3 className="ts-facts-title">Jam Kerja</h3>
                 </div>
               </div>
               {/* Col end */}
@@ -75,7 +75,7 @@ export default function Counter() {
                       0
                     </span>
                   </h2>
-                  <h3 className="ts-facts-title">Countries Experience</h3>
+                  <h3 className="ts-facts-title">Total Cabang</h3>
                 </div>
               </div>
               {/* Col end */}

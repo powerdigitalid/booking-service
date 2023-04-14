@@ -6,7 +6,7 @@ export default function Banner() {
       <div className="banner-carousel banner-carousel-1 mb-0">
         <div
           className="banner-carousel-item"
-          style={{ backgroundImage: "url(/dist/img/landing/banner/bg1.jpg)" }}
+          style={{ backgroundImage: "url(/dist/img/landing/banner/bg6.jpg)" }}
         >
           <div className="slider-content">
             <div className="container h-100">
