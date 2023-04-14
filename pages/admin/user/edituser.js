@@ -1,12 +1,12 @@
 import React from 'react'
-import Inputuser from '../../../components/adminpage/user/inputuser'
 import Layout from '../../../components/adminpage/utils/layout'
+import EditUserComponent from '../../../components/adminpage/user/edituser'
 
-export default function TambahUser() {
+export default function EditUser() {
   return (
     <div>
         <Layout>
-            <Inputuser />
+            <EditUserComponent />
         </Layout>
     </div>
   )

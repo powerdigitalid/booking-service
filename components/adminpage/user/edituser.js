@@ -1,14 +1,14 @@
 import Link from 'next/link'
 import React from 'react'
 
-export default function InputUser() {
+export default function EditUser() {
   return (
     <div>
         {/* Form input User */} 
         <div className="col-md-12 grid-margin stretch-card">
                 <div className="card">
                     <div className="card-body">
-                        <h4 className="card-title">TAMBAH USER</h4>
+                        <h4 className="card-title">EDIT USER</h4>
                         <form className="forms-sample">
                             <div className="form-group row">
                                 <label
@@ -55,8 +55,8 @@ export default function InputUser() {
                                     />
                                 </div>
                             </div>
-                            <Link href={'/admin/user'} type="submit" className="btn btn-primary mr-2">
-                                Tambahkan
+                            <Link href={'/admin/user'} type="submit" className="btn btn-success mr-2">
+                            <i className="ti-pencil" /> EDIT
                             </Link>
                         </form>
                     </div>
