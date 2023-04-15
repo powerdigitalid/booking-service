@@ -25,14 +25,7 @@ model Customer {
   information String
   duration    Int
   queue       Int
+  status      String?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @default(now())
-}
-
-model dummy {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
-  name      String?
-  password  String
-  createdAt DateTime @default(now())
 }
