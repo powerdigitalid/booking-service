@@ -10,7 +10,8 @@ export default function Navbar() {
               <div className="row align-items-center">
                 <div className="logo col-lg-3 text-center text-lg-left mb-3 mb-md-5 mb-lg-0">
                   <a className="d-block" href="index.html">
-                    <img loading="lazy" src="/dist/img/logo.png" alt="Constra" />
+                    {/* <img loading="lazy" src="/dist/img/logo.png" alt="Constra" /> */}
+                    <span className="logo-text"><h1>Logo Mentahan</h1></span>
                   </a>
                 </div>
                 {/* logo end */}

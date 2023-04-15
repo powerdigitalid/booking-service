@@ -9,12 +9,13 @@ export default function Footer() {
             <div className="row justify-content-between">
               <div className="col-lg-4 col-md-6 footer-widget footer-about">
                 <h3 className="widget-title">About Us</h3>
-                <img
+                {/* <img
                   loading="lazy"
                   className="footer-logo"
                   src="/dist/img/logo.png"
                   alt="Constra"
-                />
+                /> */}
+                <span className="footer-logo"><h1>Logo Sementara</h1></span>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
                   do eiusmod tempor inci done idunt ut labore et dolore magna
