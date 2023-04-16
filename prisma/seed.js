@@ -2,21 +2,6 @@ const PrismaClient = require('@prisma/client').PrismaClient;
 const prisma = new PrismaClient();
 
 async function main() {
-  const dummy = await prisma.dummy.createMany({
-    data: [
-      {
-        name: 'Alice',
-        email: 'alice@gmail.com',
-        password: 'alice',
-      },
-      {
-        name: 'Bob',
-        email: 'bob@gmail.com',
-        password: 'alice',
-      },
-    ],
-    skipDuplicates: true,
-  });
   const user = await prisma.user.createMany({
     data: [
       {
@@ -32,7 +17,7 @@ async function main() {
     ],
     skipDuplicates: true,
   });
-  console.log({ dummy, user });
+  console.log({ user });
 } 
 
 main()
