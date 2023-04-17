@@ -4,11 +4,11 @@ import TambahBokingComponent from '../../../components/adminpage/booking/tambahb
 
 
 export default function TambahBokingForm() {
-    return (
-        <div>
-            <Layout>
-                <TambahBokingComponent />
-            </Layout>
-        </div>
-    )
+  return (
+    <div>
+      <Layout>
+        <TambahBokingComponent />
+      </Layout>
+    </div>
+  )
 }

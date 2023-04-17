@@ -1,9 +1,10 @@
 import { prisma } from "../../../libs/prisma.libs";
 
 export default function handler(req, res) {
-    const {name, information, duration, queue} = req.body;
+    const {name, date, information, duration, queue} = req.body;
     const new_custdata = {
         name : name,
+        date: date,
         information : information,
         duration: duration,
         queue:queue,
