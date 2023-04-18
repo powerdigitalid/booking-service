@@ -17,7 +17,40 @@ async function main() {
     ],
     skipDuplicates: true,
   });
-  console.log({ user });
+  const customer = await prisma.customer.createMany({
+    data: [
+      {
+        name: 'Alice',
+        date: '2023-04-18',
+        information: 'Information',
+        duration: 1,
+        queue: 1,
+      },
+      {
+        name: 'Bob',
+        date: '2023-04-18',
+        information: 'Information',
+        duration: 1,
+        queue: 2,
+      },
+      {
+        name: 'Clara',
+        date: '2023-04-18',
+        information: 'Information',
+        duration: 1,
+        queue: 3,
+      },
+      {
+        name: 'Diana',
+        date: '2023-04-18',
+        information: 'Information',
+        duration: 1,
+        queue: 4,
+      },
+    ],
+    skipDuplicates: true,
+  });
+  console.log({ user, customer });
 } 
 
 main()

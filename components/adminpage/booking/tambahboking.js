@@ -1,11 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function TambahBokingForm() {
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
   const [keterangan, setKeterangan] = useState("");
-  const [lama, setLama] = useState("");
-  const [antrian, setAntrian] = useState("");
+  const [lama, setLama] = useState(0);
+  const [antrian, setAntrian] = useState(0);
+  const handleAvailableQueue = () => {
+    fetch("/api/customer/available-queue", {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.message === "Success") {
+          setAntrian(res.data.queue + 1);
+        } else {
+          setAntrian(1);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!name || !date || !keterangan || !lama || !antrian) {
@@ -13,19 +29,24 @@ export default function TambahBokingForm() {
     } else {
       const data = {
         name: name,
+        date: date,
         information: keterangan,
-        duration: lama,
+        duration: parseInt(lama),
         queue: antrian,
       }
       fetch("/api/customer/create", {
         method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(data),
       })
         .then((res) => res.json())
         .then((res) => {
-          if (res.status === 201) {
+          if (res.data) {
             alert("Data berhasil ditambahkan");
             handleClearState();
+            handleAvailableQueue();
           } else {
             alert("Data gagal ditambahkan");
           }
@@ -42,6 +63,9 @@ export default function TambahBokingForm() {
     setLama("");
     setAntrian("");
   }
+  useEffect(() => {
+    handleAvailableQueue();
+  }, []);
   return (
     <div className="col-md-12 grid-margin stretch-card">
       <div className="card">
@@ -107,7 +131,7 @@ export default function TambahBokingForm() {
                   id="lama"
                   placeholder="Lama Pengerjaan"
                   value={lama}
-                  onChange={(e) => setLama(e.target.value)}
+                  onChange={(e) => setLama(parseInt(e.target.value))}
                 />
               </div>
             </div>
@@ -116,14 +140,22 @@ export default function TambahBokingForm() {
                 Antrian Ke
               </label>
               <div className="col-sm-9">
-                <select
+                {/* <select
                   className="form-control form-control-sm"
                   id="antrian"
                 >
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
-                </select>
+                </select> */}
+                <input
+                  type="number"
+                  className="form-control"
+                  id="antrian"
+                  placeholder="Antrian"
+                  value={antrian}
+                  onChange={(e) => setAntrian(parseInt(e.target.value))}
+                />
               </div>
             </div>
             <button type="submit" className="btn btn-primary mr-2">

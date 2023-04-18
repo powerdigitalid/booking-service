@@ -26,7 +26,7 @@ model Customer {
   information String
   duration    Int
   queue       Int
-  status      String
+  status      String @default("unconfirmed")
   createdAt   DateTime @default(now())
   updatedAt   DateTime @default(now())
 }

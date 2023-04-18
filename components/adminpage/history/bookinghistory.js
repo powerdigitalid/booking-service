@@ -1,7 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
 export default function DataBokingHistory() {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const handleFetchData = () => {
+    setLoading(true);
+    fetch("/api/customer/all?status=done", {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.data) {
+          setData(res.data);
+        } else {
+          setData([]);
+        }
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setLoading(false);
+        setError(err);
+      });
+  };
+  useEffect(() => {
+    handleFetchData();
+  }, []);
   return (
     <div className="card">
       <div className="card-body">
@@ -42,18 +68,20 @@ export default function DataBokingHistory() {
               </tr>
             </thead>
             <tbody className="overflow-auto">
-              <tr>
-                <td>Jacob</td>
-                <td>22/04/2023</td>
-                <td>bemper rusak</td>
-                <td>1 Hari</td>
-                <td>1</td>
-                <td>
-                  <label className="btn btn-danger">
-                    <i className="icon-trash menu-icon" />
-                  </label>
-                </td>
-              </tr>
+              {data.length > 0 ? data.map((item, index) => (
+                <tr key={index}>
+                  <td>{item.name}</td>
+                  <td>{item.date}</td>
+                  <td>{item.information}</td>
+                  <td>{item.duratioin}</td>
+                  <td>{item.queue}</td>
+                  <td>
+                    <button className="btn btn-danger">
+                      <i className="icon-trash menu-icon" />
+                    </button>
+                  </td>
+                </tr>
+              )) : (<tr><td colSpan={6} className="text-warning text-center font-weight-bold">Data unavailable!</td></tr>)}
             </tbody>
           </table>
         </div>
