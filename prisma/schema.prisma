@@ -22,6 +22,7 @@ model User {
 model Customer {
   id          Int      @id @default(autoincrement())
   name        String
+  date        DateTime @default(now())
   information String
   duration    Int
   queue       Int

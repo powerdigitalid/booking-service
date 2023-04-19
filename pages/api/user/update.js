@@ -2,7 +2,7 @@ import { prisma } from "../../../libs/prisma.libs";
 
 export default function handler(req, res) {
   const { nama, namauser, pass, id } = req.body;
-  const new_userdata = {
+  const new_userdata = { 
     name: nama,
     username: namauser,
     password: pass,

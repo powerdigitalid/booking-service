@@ -1,35 +1,35 @@
 import { prisma } from "../../../libs/prisma.libs";
 
-export default function handler(req, res){
-    const {id} = req.query;
-    const {name, information, duration, queue} = req.body;
-    const update_data = {
-        name: name,
-        information: information,
-        duration: duration,
-        queue: queue,
+export default function handler(req, res) {
+    const {name,date,information,duration,queue,id} = req.body;
+    const update_data ={
+        name:name,
+        date:date,
+        information:information,
+        duration:duration,
+        queue:queue,
     };
-    if(name && information && duration && queue){
+    if(name && date && information && duration && queue && id){
         prisma.customer.update({
-            where: {
-                id: id,
+            where:{
+                id:parseInt(id),
             },
-            data: update_data,
+            data:update_data,
         })
-        .then((customer) => {
-            res.status(200).json({
-                message: "Customer updated successfully!",
-                data: customer,
+        .then((customer)=>{
+            res.status(201).json({
+                message:"Customer updated successfully!",
+                data:customer,
             });
         })
-        .catch((error) => {
+        .catch((error)=>{
             res.status(500).json({
-                message: error || "Error occured! Please contact the admin for more information.",
+                message:error || "Error occured! Please contact the admin for more information.",
             });
         });
-    } else {
+    }else{
         res.status(400).json({
-            message: "Please fill all the fields!",
+            message:"Please fill all the fields!",
         });
     }
 }

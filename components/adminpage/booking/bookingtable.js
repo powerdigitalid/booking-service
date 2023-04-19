@@ -1,7 +1,31 @@
 import Link from "next/link";
 import React from "react";
+import { useState, useEffect } from "react";
 
 export default function DataBokingTable() {
+  const [data, setData] = useState([]);
+  
+  const fetchBooking = async () => {
+    fetch('/api/customer/all',{
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    })
+    .then((res) => res.json())
+    .then((data) => {
+      setData(data.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  };
+
+  useEffect(() => {
+    fetchBooking();
+  }, []);
+
+
   return (
     <div className="card">
       <div className="card-body">
@@ -39,16 +63,18 @@ export default function DataBokingTable() {
               </tr>
             </thead>
             <tbody className="overflow-auto">
-              <tr>
-                <td>Jacob</td>
-                <td>22/04/2023</td>
-                <td>bemper rusak</td>
-                <td>1 Hari</td>
-                <td>1</td>
+              {data.map((booking,i) => (
+              <tr key={i}>
+                <td>{booking.name}</td>
+                <td>{booking.date}</td>
+                <td>{booking.information}</td>
+                <td>{booking.duration}</td>
+                <td>{booking.queue}</td>
                 <td>
                   <label className="btn btn-primary">Konfirmasi</label>
                 </td>
               </tr>
+              ))}
             </tbody>
           </table>
         </div>
