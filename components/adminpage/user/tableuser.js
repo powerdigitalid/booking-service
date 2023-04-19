@@ -1,7 +1,50 @@
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export default function TableUser() {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const handleFetchData = () => {
+    setLoading(true);
+    fetch("/api/user/all", {
+      method: "GET",
+      })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.data) {
+          setData(res.data);
+        } else {
+          setData([]);
+        }
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setLoading(false);
+        setError(err);
+      });
+  };
+
+  useEffect(() => {
+    handleFetchData();
+  }, []);
+
+  const handleDelete = (id) => {
+    fetch(`/api/user/delete/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.data) {
+          handleFetchData();
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div>
       {/* Table User */}
@@ -24,21 +67,23 @@ export default function TableUser() {
                 </tr>
               </thead>
               <tbody className="overflow-auto">
-                <tr>
-                  <td>Danang123</td>
-                  <td>123danang</td>
-                  <td>danang sudanang</td>
+              {data.length > 0 ? data.map((users, index) => (
+                <tr key={index}>
+                  <td>{users.username}</td>
+                  <td>{users.password}</td>
+                  <td>{users.name}</td>
                   <td>
                     <Link href="/admin/user/edituser">
                       <button className="btn btn-success mr-2">
                         <i className="ti-pencil" />
                       </button>
                     </Link>
-                    <button className="btn btn-danger">
+                    <button className="btn btn-danger" onClick={()=> handleDelete(users.id)} >
                       <i className="ti-trash" />
                     </button>
                   </td>
                 </tr>
+                )) : (<tr><td colSpan={6} className="text-warning font-weight-bold text-center">Data unavailable!</td></tr>)}
               </tbody>
             </table>
           </div>
