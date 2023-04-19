@@ -1,33 +1,4 @@
 import Link from "next/link";
-<<<<<<< HEAD
-import React from "react";
-import { useState, useEffect } from "react";
-
-export default function DataBokingTable() {
-  const [data, setData] = useState([]);
-  
-  const fetchBooking = async () => {
-    fetch('/api/customer/all',{
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    })
-    .then((res) => res.json())
-    .then((data) => {
-      setData(data.data);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-  };
-
-  useEffect(() => {
-    fetchBooking();
-  }, []);
-
-
-=======
 import React, { useEffect, useState } from "react";
 
 export default function DataBokingTable() {
@@ -57,7 +28,6 @@ export default function DataBokingTable() {
   useEffect(() => {
     handleFetchData();
   }, []);
->>>>>>> c8ff141b59e1ffd9676d6ba5624675df106a675f
   return (
     <div className="card">
       <div className="card-body">
@@ -82,36 +52,6 @@ export default function DataBokingTable() {
             />
           </div>
 
-<<<<<<< HEAD
-        <div className="table-responsive">
-          <table className="table table-hover">
-            <thead>
-              <tr>
-                <th>Nama</th>
-                <th>Tanggal</th>
-                <th>Keterangan</th>
-                <th>Lama Pengerjaan</th>
-                <th>Antrian Ke</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody className="overflow-auto">
-              {data.map((booking,i) => (
-              <tr key={i}>
-                <td>{booking.name}</td>
-                <td>{booking.date}</td>
-                <td>{booking.information}</td>
-                <td>{booking.duration}</td>
-                <td>{booking.queue}</td>
-                <td>
-                  <label className="btn btn-primary">Konfirmasi</label>
-                </td>
-              </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-=======
           <div className="table-responsive">
             <table className="table table-hover">
               <thead>
@@ -140,7 +80,6 @@ export default function DataBokingTable() {
               </tbody>
             </table>
           </div>
->>>>>>> c8ff141b59e1ffd9676d6ba5624675df106a675f
         </div>
       </div>
     </div>

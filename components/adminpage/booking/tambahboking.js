@@ -1,56 +1,3 @@
-<<<<<<< HEAD
-import Link from "next/link";
-import React, {useState,useEffect} from "react";
-import {useRouter} from "next/router";
-
-export default function TambahBokingForm() {
-  const router = useRouter();
-  const [name, setName] = useState("");
-  const [tanggal, setTanggal] = useState("");
-  const [information, setInformation] = useState("");
-  const [duration, setDuration] = useState("");
-  const [queue, setQueue] = useState("");
-
-  const handleBoking =()=>{
-    const data = {
-      name,
-      tanggal,
-      information,
-      duration,
-      queue
-    };
-    fetch('/api/customer/create',{
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    }
-    ).then((res) => res.json())
-    .then((data) => {
-      if(data.status === 200){
-        alert('Berhasil menambahkan data');
-        router.push('/admin/adminpage/booking');
-        handleClearForm();
-      }else{
-        alert('Gagal menambahkan data');
-        console.log(data);
-      }
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-  }
-  const handleClearForm = ()=>{
-    setName("");
-    setTanggal("");
-    setInformation("");
-    setDuration("");
-    setQueue("");
-  }
-  useEffect(() => {
-    handleBoking();
-=======
 import React, { useEffect, useState } from "react";
 
 export default function TambahBokingForm() {
@@ -118,7 +65,6 @@ export default function TambahBokingForm() {
   }
   useEffect(() => {
     handleAvailableQueue();
->>>>>>> c8ff141b59e1ffd9676d6ba5624675df106a675f
   }, []);
   return (
     <div className="col-md-12 grid-margin stretch-card">
@@ -139,12 +85,8 @@ export default function TambahBokingForm() {
                   className="form-control"
                   id="name"
                   placeholder="Name"
-<<<<<<< HEAD
-                  onChange={(e)=>setName(e.target.value)}
-=======
                   value={name}
                   onChange={(e) => setName(e.target.value)}
->>>>>>> c8ff141b59e1ffd9676d6ba5624675df106a675f
                 />
               </div>
             </div>
@@ -158,12 +100,8 @@ export default function TambahBokingForm() {
                   className="form-control"
                   id="tanggal"
                   placeholder="Tanggal"
-<<<<<<< HEAD
-                  onChange={(e)=>setTanggal(e.target.value)}
-=======
                   value={date}
                   onChange={(e) => setDate(e.target.value)}
->>>>>>> c8ff141b59e1ffd9676d6ba5624675df106a675f
                 />
               </div>
             </div>
@@ -177,12 +115,8 @@ export default function TambahBokingForm() {
                   className="form-control"
                   id="keterangan"
                   placeholder="Mobile number"
-<<<<<<< HEAD
-                  onChange={(e)=>setInformation(e.target.value)}
-=======
                   value={keterangan}
                   onChange={(e) => setKeterangan(e.target.value)}
->>>>>>> c8ff141b59e1ffd9676d6ba5624675df106a675f
                 />
               </div>
             </div>
@@ -196,12 +130,8 @@ export default function TambahBokingForm() {
                   className="form-control"
                   id="lama"
                   placeholder="Lama Pengerjaan"
-<<<<<<< HEAD
-                  onChange={(e)=>setDuration(e.target.value)}
-=======
                   value={lama}
                   onChange={(e) => setLama(parseInt(e.target.value))}
->>>>>>> c8ff141b59e1ffd9676d6ba5624675df106a675f
                 />
               </div>
             </div>
@@ -215,13 +145,6 @@ export default function TambahBokingForm() {
                   id="antrian"
                   onChange={(e)=>setQueue(e.target.value)}
                 >
-<<<<<<< HEAD
-                  <option value={''}>Pilih Nomor Antrian</option>
-                  <option value={'1'}>1</option>
-                  <option value={'2'}>2</option>
-                  <option value={'3'}>3</option>
-                </select>
-=======
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
@@ -234,7 +157,6 @@ export default function TambahBokingForm() {
                   value={antrian}
                   onChange={(e) => setAntrian(parseInt(e.target.value))}
                 />
->>>>>>> c8ff141b59e1ffd9676d6ba5624675df106a675f
               </div>
             </div>
             <button type="submit" className="btn btn-primary mr-2">
