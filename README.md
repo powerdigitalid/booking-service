@@ -15,8 +15,8 @@ link lading page =>> <a>https://themewagon.com/themes/free-bootstrap-4-html-5-ad
 - [x] Data Booking (table)
 - [ ] history (table)
 - [x] User table (get all)
-- [ ] Logout
-
+- [x] Login
+- [x] Logout
 
 ### Backend
 
@@ -27,4 +27,5 @@ link lading page =>> <a>https://themewagon.com/themes/free-bootstrap-4-html-5-ad
 - [x] Booking history (delete & delete all)
 - [ ] User table (list)
 - [ ] CRUD User
-- [ ] Logout
+- [x] Login
+- [x] Logout

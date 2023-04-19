@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
+import { removeCookie } from "../../../libs/cookie.lib";
 export default function Sidebar() {
   const router = useRouter();
   const [activeMenu, setActiveMenu] = useState("");
@@ -27,6 +29,26 @@ export default function Sidebar() {
         setActiveMenu("");
         break;
     }
+  };
+  const handleLogout = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You will be logged out!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, logout!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        removeCookie("token");
+        removeCookie("username");
+        setTimeout(() => {
+          window.location.href = "/login";
+        }, 3000)
+        Swal.fire("Success", "Logout Success! Redirected in 3 seconds...", "success");
+      }
+    })
   };
   useEffect(() => {handleCheckActiveMenu();}, []);
   return (
@@ -63,7 +85,7 @@ export default function Sidebar() {
           </Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" href="/login">
+          <Link className="nav-link" href="#" onClick={handleLogout}>
             <i className="icon-square-cross menu-icon" />
             <span className="menu-title">Close</span>
           </Link>

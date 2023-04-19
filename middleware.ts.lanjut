@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import Jwt from 'jsonwebtoken';
 
 export async function middleware(req, res) {
   const token = req.body.token || req.query.token || req.headers['x-access-token'] || req.headers['authorization'];
