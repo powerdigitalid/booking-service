@@ -25,6 +25,12 @@ export default function Sidebar() {
       case "user":
         setActiveMenu("user");
         break;
+      case "edituser":
+        setActiveMenu("user");
+        break;
+      case "tambahuser":
+        setActiveMenu("user");
+        break;
       default:
         setActiveMenu("");
         break;

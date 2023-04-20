@@ -1,12 +1,17 @@
 import { prisma } from "../../../libs/prisma.libs";
 
-export default async function handler(req, res) {
-  const { userId } = req.query;
+export default function handler(req, res) {
+  const { id } = req.query;
   if (req.method === 'GET') {
-    await prisma.user.findUnique({
+    prisma.user.findFirst({
       where: {
-        id: userId,
+        id: parseInt(id),
       },
+      select: {
+        id: true,
+        name: true,
+        username: true,
+      }
     })
       .then((user) => {
         if (user != null && user != undefined) {
@@ -26,6 +31,7 @@ export default async function handler(req, res) {
         res.status(500).json({
           message: err || "Error occured! Please contact the admin for more information.",
         });
-      })
+      });
+    // res.status(200).json({id: id})
   }
 }

@@ -15,7 +15,7 @@ export default function handler(req, res) {
       data: new_userdata,
     })
       .then((user) => {
-        res.status(201).json({
+        res.status(200).json({
           message: "User updated successfully!",
           data: user,
         });

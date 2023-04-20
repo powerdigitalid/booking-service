@@ -11,7 +11,7 @@ link lading page =>> <a>https://themewagon.com/themes/free-bootstrap-4-html-5-ad
 ### Frontend
 
 - [ ] Dashboar Admin
-- [ ] Input Booking
+- [x] Input Booking
 - [x] Data Booking (table)
 - [ ] history (table)
 - [x] User table (get all)
@@ -24,8 +24,8 @@ link lading page =>> <a>https://themewagon.com/themes/free-bootstrap-4-html-5-ad
 - [x] Booking table (list)
 - [ ] Booking table (confirm)
 - [x] Booking history (list)
-- [x] Booking history (delete & delete all)
-- [ ] User table (list)
-- [ ] CRUD User
+- [ ] Booking history (delete & delete all)
+- [x] User table (list)
+- [x] CRUD User
 - [x] Login
 - [x] Logout

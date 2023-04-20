@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 
 export default function TambahBokingForm() {
   const [name, setName] = useState("");
@@ -44,11 +45,11 @@ export default function TambahBokingForm() {
         .then((res) => res.json())
         .then((res) => {
           if (res.data) {
-            alert("Data berhasil ditambahkan");
+            Swal.fire("Success", "Data berhasil ditambahkan", "success");
             handleClearState();
             handleAvailableQueue();
           } else {
-            alert("Data gagal ditambahkan");
+            Swal.fire("Error", res.message, "error");
           }
         })
         .catch((err) => {

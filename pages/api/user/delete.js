@@ -2,7 +2,7 @@ import { prisma } from "../../../libs/prisma.libs";
 
 export default function handler(req, res) {
   const { id } = req.query;
-  if (id) {
+  if (id && req.method === "DELETE") {
     prisma.user.delete({
       where: {
         id: parseInt(id),

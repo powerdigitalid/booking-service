@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 
 export default function TableUser() {
   const [data, setData] = useState([]);
@@ -30,8 +31,8 @@ export default function TableUser() {
     handleFetchData();
   }, []);
 
-  const handleDelete = (id) => {
-    fetch(`/api/user/delete/${id}`, {
+  const handleDeleteData = (id) => {
+    fetch(`/api/user/delete?id=${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -43,6 +44,22 @@ export default function TableUser() {
       .catch((err) => {
         console.log(err);
       });
+  };
+  const handleDelete = (id, e) => {
+    e.preventDefault();
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        handleDeleteData(id);
+      }
+    })
   };
 
   return (
@@ -73,12 +90,12 @@ export default function TableUser() {
                   <td>{users.password}</td>
                   <td>{users.name}</td>
                   <td>
-                    <Link href="/admin/user/edituser">
+                    <Link href={`/admin/user/edituser?id=${users.id}`}>
                       <button className="btn btn-success mr-2">
                         <i className="ti-pencil" />
                       </button>
                     </Link>
-                    <button className="btn btn-danger" onClick={()=> handleDelete(users.id)} >
+                    <button className="btn btn-danger" onClick={(e)=> handleDelete(users.id, e)} >
                       <i className="ti-trash" />
                     </button>
                   </td>
