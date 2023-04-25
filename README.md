@@ -14,7 +14,7 @@ link lading page =>> <a>https://themewagon.com/themes/free-bootstrap-4-html-5-ad
 - [x] Input Booking
 - [x] Data Booking (table)
 - [ ] history (table)
-- [x] User table (get all)
+- [x] User table (get all, create, delete,update)
 - [x] Login
 - [x] Logout
 

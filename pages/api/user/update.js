@@ -1,13 +1,13 @@
 import { prisma } from "../../../libs/prisma.libs";
 
 export default function handler(req, res) {
-  const { nama, namauser, pass, id } = req.body;
+  const { name, username, password, id } = req.body;
   const new_userdata = { 
-    name: nama,
-    username: namauser,
-    password: pass,
+    name: name,
+    username: username,
+    password: password,
   };
-  if (nama && namauser && pass && id) {
+  if (name && username && password && id) {
     prisma.user.update({
       where: {
         id: parseInt(id),

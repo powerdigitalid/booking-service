@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import React, { useState } from 'react'
-import Swal from 'sweetalert2';
+import Swal from 'sweetalert2'
 
 export default function InputUser() {
   const [username, setUsername] = useState('');
@@ -9,31 +9,37 @@ export default function InputUser() {
   const router = useRouter();
   const handleSubmit = (e) => {
     e.preventDefault();
-    const data = {
-      namauser: username, pass: password, nama: name
-    };
-    fetch('/api/user/create', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if(data.data){
-          Swal.fire("Success", data.message, "success");
-          handleClearState();
-          router.push('/admin/user');
-        } else {
-          Swal.fire("Error", data.message, "error");
-        }
+    if (!username || !password || !name) {
+      alert('Please fill all the fields');
+    } else {
+      const data = {
+        username: username,
+        password: password,
+        name: name,
+      };
+      fetch('/api/user/create', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
       })
-      .catch((err) => {
-        Swal.fire("Error", "Internal Server Error! => " + err, "error");
-        console.error(err);
-      });
+        .then((res) => res.json())
+        .then((res) => {
+          if (res.data) {
+            Swal.fire('Success', 'Data berhasil ditambahkan', 'success');
+            handleClearState();
+            router.push('/admin/user');
+          } else {
+            Swal.fire('Error', res.message, 'error');
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   };
+  
   const handleClearState = () => {
     setUsername('');
     setPassword('');

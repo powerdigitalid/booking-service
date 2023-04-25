@@ -11,9 +11,9 @@ export default function EditUser() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = {
-      nama: name,
-      namauser: username,
-      pass: password,
+      name: name,
+      username: username,
+      password: password,
       id: id,
     };
     fetch(`/api/user/update`, {
