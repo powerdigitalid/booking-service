@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import Swal from "sweetalert2";
  
 export default function DataBokingTable() {
   const [data, setData] = useState([]);
@@ -23,6 +24,29 @@ export default function DataBokingTable() {
         console.log(err);
         setLoading(false);
         setError(err);
+      });
+  };
+  const handleConfirm = (e, id) => {
+    e.preventDefault();
+    fetch("/api/customer/confirm", {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({id: id}),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.data) {
+          handleFetchData();
+        } else {
+          Swal.fire("Success", res.message, "success");
+          handleFetchData();
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        Swal.fire("Error", err.message, "error");
       });
   };
   useEffect(() => {
@@ -73,7 +97,7 @@ export default function DataBokingTable() {
                     <td>{item.duration}</td>
                     <td>{item.queue}</td>
                     <td>
-                      <button className="btn btn-sm btn-primary">Konfirmasi</button>
+                      <button className="btn btn-sm btn-primary" onClick={(e) => handleConfirm(e, item.id)}>Konfirmasi</button>
                     </td>
                   </tr>
                 )) : (<tr><td colSpan={6} className="text-warning font-weight-bold text-center">Data unavailable!</td></tr>)}

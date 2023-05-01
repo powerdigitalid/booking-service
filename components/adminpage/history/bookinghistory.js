@@ -7,7 +7,7 @@ export default function DataBokingHistory() {
   const [error, setError] = useState(null);
   const handleFetchData = () => {
     setLoading(true);
-    fetch("/api/customer/all?status=done", {
+    fetch("/api/customer/all?status=", {
       method: "GET",
     })
       .then((res) => res.json())
@@ -23,6 +23,28 @@ export default function DataBokingHistory() {
         console.log(err);
         setLoading(false);
         setError(err);
+      });
+  };
+  const handleDelete = (e, id) => {
+    e.preventDefault();
+    fetch(`/api/customer/delete?id=${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.data) {
+          handleFetchData();
+        } else {
+          Swal.fire("Success", res.message, "success");
+          handleFetchData();
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        Swal.fire("Error", err.message, "error");
       });
   };
   useEffect(() => {
@@ -64,6 +86,7 @@ export default function DataBokingHistory() {
                 <th>Keterangan</th>
                 <th>Lama Pengerjaan</th>
                 <th>Antrian Ke</th>
+                <th>Status</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -73,8 +96,9 @@ export default function DataBokingHistory() {
                   <td>{item.name}</td>
                   <td>{item.date}</td>
                   <td>{item.information}</td>
-                  <td>{item.duratioin}</td>
+                  <td>{item.duration}</td>
                   <td>{item.queue}</td>
+                  <td><span className={`badge badge-pill badge-${item.status == 'unconfirmed' ? 'warning' : item.status == 'confirmed' ? 'success' : item.status == 'done' ? 'info' : 'secondary'}`}>{item.status}</span></td>
                   <td>
                     <button className="btn btn-danger">
                       <i className="icon-trash menu-icon" />

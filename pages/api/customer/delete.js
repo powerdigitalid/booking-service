@@ -4,9 +4,12 @@ export default function handler(req, res) {
   const { id } = req.query;
   if (id) {
     prisma.customer
-      .delete({
+      .update({
         where: {
           id: parseInt(id),
+        },
+        data: {
+          status: "deleted",
         },
       })
       .then((customer) => {
