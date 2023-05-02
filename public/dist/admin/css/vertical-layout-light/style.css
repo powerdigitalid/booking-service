@@ -22102,6 +22102,22 @@ code {
 .card.card-light-blue:hover {
   background: #8f8eed;
 }
+.card.card-light-yellow {
+  background: var(--yellow);
+  color: #ffffff;
+}
+
+.card.card-light-yellow:hover {
+  background: yellow;
+}
+.card.card-light-green {
+  background: var(--green);
+  color: #ffffff;
+}
+
+.card.card-light-green:hover {
+  background: green;
+}
 
 .card.card-light-danger {
   background: #F3797E;
