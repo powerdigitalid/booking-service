@@ -6,12 +6,12 @@ export default function Navbar() {
       <header id="header" className="header-one">
         <div className="bg-white">
           <div className="container">
-            <div className="logo-area">
+            <div className="logo-area"> 
               <div className="row align-items-center">
                 <div className="logo col-lg-3 text-center text-lg-left mb-3 mb-md-5 mb-lg-0">
                   <a className="d-block" href="index.html">
-                    {/* <img loading="lazy" src="/dist/img/logo.png" alt="Constra" /> */}
-                    <span className="logo-text"><h1>Logo Mentahan</h1></span>
+                    <img loading="lazy" src="/dist/img/logo.png" alt="Constra" style={{height:"100px", width:"180px"}}/>
+                    {/* <span className="logo-text"><h1>Logo Mentahan</h1></span> */}
                   </a>
                 </div>
                 {/* logo end */}
@@ -20,17 +20,17 @@ export default function Navbar() {
                     <li>
                       <div className="info-box">
                         <div className="info-box-content">
-                          <p className="info-box-title">Call Us</p>
-                          <p className="info-box-subtitle">(+9) 847-291-4353</p>
+                          <p className="info-box-title">Hubungi Kami</p>
+                          <p className="info-box-subtitle">(+62) 823-2234-4343</p>
                         </div>
                       </div>
                     </li>
                     <li>
                       <div className="info-box">
                         <div className="info-box-content">
-                          <p className="info-box-title">Email Us</p>
+                          <p className="info-box-title">Email Kami</p>
                           <p className="info-box-subtitle">
-                            office@Constra.com
+                            bokingkami@gmail.com
                           </p>
                         </div>
                       </div>
@@ -38,14 +38,14 @@ export default function Navbar() {
                     <li className="last">
                       <div className="info-box last">
                         <div className="info-box-content">
-                          <p className="info-box-title">Global Certificate</p>
+                          <p className="info-box-title">Sertifikat Global</p>
                           <p className="info-box-subtitle">ISO 9001:2017</p>
                         </div>
                       </div>
                     </li>
                     <li className="header-get-a-quote">
                       <a className="btn btn-primary" href="contact.html">
-                        Get A Quote
+                        Dapatkan Penawaran
                       </a>
                     </li>
                   </ul>
@@ -103,23 +103,23 @@ export default function Navbar() {
                           className="nav-link dropdown-toggle"
                           data-toggle="dropdown"
                         >
-                          Company <i className="fa fa-angle-down" />
+                          Perusahaan <i className="fa fa-angle-down" />
                         </a>
                         <ul className="dropdown-menu" role="menu">
                           <li>
-                            <a href="about.html">About Us</a>
+                            <a href="about.html">Tentang Kami</a>
                           </li>
                           <li>
-                            <a href="team.html">Our People</a>
+                            <a href="team.html">Orang - Orang Kami</a>
                           </li>
                           <li>
-                            <a href="testimonials.html">Testimonials</a>
+                            <a href="testimonials.html">Testimonial</a>
                           </li>
                           <li>
-                            <a href="faq.html">Faq</a>
+                            <a href="faq.html">Tanya Jawab</a>
                           </li>
                           <li>
-                            <a href="pricing.html">Pricing</a>
+                            <a href="pricing.html">Harga</a>
                           </li>
                         </ul>
                       </li>
@@ -129,14 +129,17 @@ export default function Navbar() {
                           className="nav-link dropdown-toggle"
                           data-toggle="dropdown"
                         >
-                          Projects <i className="fa fa-angle-down" />
+                          Proyek <i className="fa fa-angle-down" />
                         </a>
                         <ul className="dropdown-menu" role="menu">
                           <li>
-                            <a href="projects.html">Projects All</a>
+                            <a href="projects.html"> Semua Proyek</a>
                           </li>
                           <li>
-                            <a href="projects-single.html">Projects Single</a>
+                            <a href="projects-single.html">Proyek Gabungan</a>
+                          </li>
+                          <li>
+                            <a href="projects-single.html">Proyek Tuggal</a>
                           </li>
                         </ul>
                       </li>
@@ -146,14 +149,14 @@ export default function Navbar() {
                           className="nav-link dropdown-toggle"
                           data-toggle="dropdown"
                         >
-                          Services <i className="fa fa-angle-down" />
+                          Jasa <i className="fa fa-angle-down" />
                         </a>
                         <ul className="dropdown-menu" role="menu">
                           <li>
-                            <a href="services.html">Services All</a>
+                            <a href="services.html">Jasa Online</a>
                           </li>
                           <li>
-                            <a href="service-single.html">Services Single</a>
+                            <a href="service-single.html">Jasa Offline</a>
                           </li>
                         </ul>
                       </li>
@@ -163,64 +166,12 @@ export default function Navbar() {
                           className="nav-link dropdown-toggle"
                           data-toggle="dropdown"
                         >
-                          Features <i className="fa fa-angle-down" />
+                          Berita <i className="fa fa-angle-down" />
                         </a>
-                        <ul className="dropdown-menu" role="menu">
-                          <li>
-                            <a href="typography.html">Typography</a>
-                          </li>
-                          <li>
-                            <a href="404.html">404</a>
-                          </li>
-                          <li className="dropdown-submenu">
-                            <a
-                              href="#!"
-                              className="dropdown-toggle"
-                              data-toggle="dropdown"
-                            >
-                              Parent Menu
-                            </a>
-                            <ul className="dropdown-menu">
-                              <li>
-                                <a href="#!">Child Menu 1</a>
-                              </li>
-                              <li>
-                                <a href="#!">Child Menu 2</a>
-                              </li>
-                              <li>
-                                <a href="#!">Child Menu 3</a>
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </li>
-                      <li className="nav-item dropdown">
-                        <a
-                          href="#"
-                          className="nav-link dropdown-toggle"
-                          data-toggle="dropdown"
-                        >
-                          News <i className="fa fa-angle-down" />
-                        </a>
-                        <ul className="dropdown-menu" role="menu">
-                          <li>
-                            <a href="news-left-sidebar.html">
-                              News Left Sidebar
-                            </a>
-                          </li>
-                          <li>
-                            <a href="news-right-sidebar.html">
-                              News Right Sidebar
-                            </a>
-                          </li>
-                          <li>
-                            <a href="news-single.html">News Single</a>
-                          </li>
-                        </ul>
                       </li>
                       <li className="nav-item">
                         <a className="nav-link" href="contact.html">
-                          Contact
+                          Kontak
                         </a>
                       </li>
                     </ul>

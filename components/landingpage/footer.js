@@ -8,18 +8,11 @@ export default function Footer() {
           <div className="container">
             <div className="row justify-content-between">
               <div className="col-lg-4 col-md-6 footer-widget footer-about">
-                <h3 className="widget-title">About Us</h3>
-                {/* <img
-                  loading="lazy"
-                  className="footer-logo"
-                  src="/dist/img/logo.png"
-                  alt="Constra"
-                /> */}
-                <span className="footer-logo"><h1>Logo Sementara</h1></span>
+                <h3 className="widget-title">Tentng Kami</h3>
+                <img loading="lazy" src="/dist/img/logo-1.png" alt="Constra" style={{height:"100px", width:"180px"}}/>
+                {/* <span className="footer-logo"><h1>Logo Sementara</h1></span> */}
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                  do eiusmod tempor inci done idunt ut labore et dolore magna
-                  aliqua.
+                Sangan penting untuk memperhatikan kesehatan kendaraan anda, karena kesehatan kendaraan anda adalah prioritas kami.
                 </p>
                 <div className="footer-social">
                   <ul>
@@ -61,41 +54,38 @@ export default function Footer() {
               </div>
               {/* Col end */}
               <div className="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
-                <h3 className="widget-title">Working Hours</h3>
+                <h3 className="widget-title">Jam Kerja</h3>
                 <div className="working-hours">
-                  We work 7 days a week, every day excluding major holidays.
-                  Contact us if you have an emergency, with our Hotline and
-                  Contact form.
+                Kami bekerja 7 hari seminggu, setiap hari tidak termasuk hari libur besar. Hubungi kami jika Anda memiliki keadaan darurat, dengan Hotline dan formulir Kontak kami.
                   <br />
-                  <br />
-                  Monday - Friday:
+                  Senin - Jumat:
                   <span className="text-right">10:00 - 16:00 </span> <br />
-                  Saturday: <span className="text-right">
+                  Sabtu: <span className="text-right">
                     12:00 - 15:00
                   </span>{" "}
                   <br />
-                  Sunday and holidays:
+                  Minggu & Hari Libur:
                   <span className="text-right">09:00 - 12:00</span>
                 </div>
               </div>
               {/* Col end */}
               <div className="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
-                <h3 className="widget-title">Services</h3>
+                <h3 className="widget-title">Jasa</h3>
                 <ul className="list-arrow">
                   <li>
-                    <a href="service-single.html">Pre-Construction</a>
+                    <a href="service-single.html">Bengkel Online</a>
                   </li>
                   <li>
-                    <a href="service-single.html">General Contracting</a>
+                    <a href="service-single.html">Pemesanan & Pemasangan Suku Cadang</a>
                   </li>
                   <li>
-                    <a href="service-single.html">Construction Management</a>
+                    <a href="service-single.html">Desain Mesin & Body Kendaraan</a>
                   </li>
                   <li>
-                    <a href="service-single.html">Design and Build</a>
+                    <a href="service-single.html">Servise Kendaraan Berat</a>
                   </li>
                   <li>
-                    <a href="service-single.html">Self-Perform Construction</a>
+                    <a href="service-single.html">Bengkel Offline</a>
                   </li>
                 </ul>
               </div>

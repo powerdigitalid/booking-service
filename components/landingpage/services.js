@@ -7,8 +7,8 @@ export default function Services() {
         <div className="container">
           <div className="row text-center">
             <div className="col-12">
-              <h2 className="section-title">We Are Specialists In</h2>
-              <h3 className="section-sub-title">What We Do</h3>
+              <h2 className="section-title">Kami Sepesialis Dalam</h2>
+              <h3 className="section-sub-title">Apa Yang Kami Lakukan</h3>
             </div>
           </div>
           {/*/ Title row end */}
@@ -24,11 +24,10 @@ export default function Services() {
                 </div>
                 <div className="ts-service-box-info">
                   <h3 className="service-box-title">
-                    <a href="#">Home Construction</a>
+                    <a href="#">Pesan Layanan Dari Rumah</a>
                   </h3>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit
-                    Integer adipiscing erat
+                    Pelanggan dapat memesan layanan dari rumah tanpa harus datang ke bengkel
                   </p>
                 </div>
               </div>
@@ -43,11 +42,10 @@ export default function Services() {
                 </div>
                 <div className="ts-service-box-info">
                   <h3 className="service-box-title">
-                    <a href="#">Building Remodels</a>
+                    <a href="#">Terima Pemesanan & Pemasangan Suku Cadang</a>
                   </h3>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit
-                    Integer adipiscing erat
+                    Menerima pemesanan dan pemasangan suku cadang yang dibutuhkan
                   </p>
                 </div>
               </div>
@@ -62,11 +60,10 @@ export default function Services() {
                 </div>
                 <div className="ts-service-box-info">
                   <h3 className="service-box-title">
-                    <a href="#">Interior Design</a>
+                    <a href="#">Desain Custom Mesin</a>
                   </h3>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit
-                    Integer adipiscing erat
+                    Custom mesin sesuai dengan kebutuhan pelanggan
                   </p>
                 </div>
               </div>
@@ -77,7 +74,7 @@ export default function Services() {
               <img
                 loading="lazy"
                 className="img-fluid"
-                src="/dist/img/landing/service-center.jpg"
+                src="/dist/img/landing/logo-bengkel.png" 
                 alt="service-avater-image"
               />
             </div>
@@ -93,11 +90,10 @@ export default function Services() {
                 </div>
                 <div className="ts-service-box-info">
                   <h3 className="service-box-title">
-                    <a href="#">Exterior Design</a>
+                    <a href="#">Desain body</a>
                   </h3>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit
-                    Integer adipiscing erat
+                    Desain body kendaraan sesuai dengan kebutuhan pelanggan
                   </p>
                 </div>
               </div>
@@ -112,11 +108,10 @@ export default function Services() {
                 </div>
                 <div className="ts-service-box-info">
                   <h3 className="service-box-title">
-                    <a href="#">Renovation</a>
+                    <a href="#">Merima Kendaraan Berat</a>
                   </h3>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit
-                    Integer adipiscing erat
+                    Kendaraan berat yang bermasalah dapat dibawa ke bengkel
                   </p>
                 </div>
               </div>
@@ -131,11 +126,10 @@ export default function Services() {
                 </div>
                 <div className="ts-service-box-info">
                   <h3 className="service-box-title">
-                    <a href="#">Safety Management</a>
+                    <a href="#">Mementingkan Keamanan</a>
                   </h3>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit
-                    Integer adipiscing erat
+                    Semua yang ada di bengkel akan dijaga keamanannya, baik itu kendaraan maupun suku cadang
                   </p>
                 </div>
               </div>
