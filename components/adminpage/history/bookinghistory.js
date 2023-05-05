@@ -5,6 +5,8 @@ export default function DataBokingHistory() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [search, setSearch] = useState("");
+  const searched = data.filter((item) => item.name.toLowerCase().includes(search.toLowerCase()));
   const handleFetchData = () => {
     setLoading(true);
     fetch("/api/customer/all?status=", {
@@ -25,9 +27,30 @@ export default function DataBokingHistory() {
         setError(err);
       });
   };
-  const handleDelete = (e, id) => {
-    e.preventDefault();
+  const handleDelete = (id) => {
     fetch(`/api/customer/delete?id=${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.data) {
+          handleFetchData();
+        } else {
+          Swal.fire("Success", res.message, "success");
+          handleFetchData();
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        Swal.fire("Error", err.message, "error");
+      });
+  };
+
+  const handleDeleteAll = (id) => {
+    fetch(`/api/customer/deleteall?id=${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -71,11 +94,13 @@ export default function DataBokingHistory() {
             placeholder="CARI"
             aria-label="search"
             aria-describedby="search"
+            value = {search}
+            onChange={(e) => setSearch(e.target.value)}
           />
         </div>
-          <Link href={"/admin/booking"} className="btn btn-danger col-2">
+          <div className="btn btn-danger col-2" onClick={()=>handleDeleteAll(id)} >
             <i className="icon-trash menu-icon" /> Semua
-          </Link>
+          </div>
         </div>
         <div className="table-responsive">
           <table className="table table-hover">
@@ -91,7 +116,7 @@ export default function DataBokingHistory() {
               </tr>
             </thead>
             <tbody className="overflow-auto">
-              {data.length > 0 ? data.map((item, index) => (
+              {searched.length > 0 ? searched.map((item, index) => (
                 <tr key={index}>
                   <td>{item.name}</td>
                   <td>{item.date}</td>
@@ -100,7 +125,7 @@ export default function DataBokingHistory() {
                   <td>{item.queue}</td>
                   <td><span className={`badge badge-pill badge-${item.status == 'unconfirmed' ? 'warning' : item.status == 'confirmed' ? 'success' : item.status == 'done' ? 'info' : 'secondary'}`}>{item.status}</span></td>
                   <td>
-                    <button className="btn btn-danger">
+                    <button className="btn btn-danger" onClick={()=>handleDelete(item.id)} >
                       <i className="icon-trash menu-icon" />
                     </button>
                   </td>
