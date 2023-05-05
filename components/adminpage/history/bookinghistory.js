@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
+import Swal from "sweetalert2";
 
 export default function DataBokingHistory() {
   const [data, setData] = useState([]);
@@ -98,7 +98,7 @@ export default function DataBokingHistory() {
             onChange={(e) => setSearch(e.target.value)}
           />
         </div>
-          <div className="btn btn-danger col-2" onClick={()=>handleDeleteAll(id)} >
+          <div className="btn btn-danger col-2" onClick={()=>handleDeleteAll()}>
             <i className="icon-trash menu-icon" /> Semua
           </div>
         </div>

@@ -1,4 +1,36 @@
+import { useState, useEffect } from "react";
+
 export default function Dashboard() {
+  const [datacount, setDatacount] = useState({customers:0,bookings:0,users:0});
+
+  const handleCount =()=>{
+    fetch("/api/conterdasboar", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) =>{
+        if(res.status==200){
+          return res.json()
+        }else{
+          throw new Error('Something went wrong');
+        }
+      }
+      )
+      .then((data) => {
+        setDatacount(data);
+      }
+      )
+      .catch((error) => {
+        console.log(error);
+      }
+      );
+  }
+
+  useEffect(() => {
+    handleCount();
+  }, []);
   return (
     <div>
       <div className="row">
@@ -20,7 +52,7 @@ export default function Dashboard() {
               <div className="card card-light-yellow">
                 <div className="card-body">
                   <p className="mb-4">Booked</p>
-                  <p className="fs-30 mb-2">4006</p>
+                  <p className="fs-30 mb-2">{datacount.booked}</p>
                 </div>
               </div>
             </div>
@@ -28,7 +60,7 @@ export default function Dashboard() {
               <div className="card card-light-green">
                 <div className="card-body">
                   <p className="mb-4">Confirmed</p>
-                  <p className="fs-30 mb-2">61344</p>
+                  <p className="fs-30 mb-2">{datacount.customers}</p>
                 </div>
               </div>
             </div>
@@ -38,7 +70,7 @@ export default function Dashboard() {
               <div className="card card-tale">
                 <div className="card-body">
                   <p className="mb-4">Users</p>
-                  <p className="fs-30 mb-2">34040</p>
+                  <p className="fs-30 mb-2">{datacount.users}</p>
                 </div>
               </div>
             </div>

@@ -79,7 +79,7 @@ export default function Navbar() {
                     id="navbar-collapse"
                     className="collapse navbar-collapse"
                   >
-                    <ul className="nav navbar-nav mr-auto">
+                    <ul className="nav navbar-nav mr-auto m-1">
                       <li className="nav-item dropdown active">
                         <a
                           href="#"

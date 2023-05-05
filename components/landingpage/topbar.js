@@ -10,7 +10,7 @@ export default function TopBar() {
               <ul className="top-info text-center text-md-left">
                 <li>
                   <i className="fas fa-map-marker-alt" />
-                  <p className="info-text">Selamat Datang, Kempuasan Anda Prioritas Kami</p>
+                  <p className="info-text">Selamat Datang, Kepuasan Anda Prioritas Kami</p>
                 </li>
               </ul>
             </div>

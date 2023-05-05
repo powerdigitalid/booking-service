@@ -6,7 +6,9 @@ export default function handler(req, res) {
     prisma.customer
       .updateMany({
         where: {
-          id: parseInt(id),
+          status:  "confirmed",
+          status:  "pending",
+          status:  "unconfirmed",
         },
         data: {
           status: "deleted",
