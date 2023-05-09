@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { removeCookie } from "../../../libs/cookie.lib";
-export default function Sidebar() {
+export default function Sidebar({clicked, setClicked, responsive, setResponsive} ) {
   const router = useRouter();
   const [activeMenu, setActiveMenu] = useState("");
   const handleCheckActiveMenu = () => {
@@ -58,7 +58,7 @@ export default function Sidebar() {
   };
   useEffect(() => {handleCheckActiveMenu();}, []);
   return (
-    <nav className="sidebar sidebar-offcanvas" id="sidebar">
+    <nav className={`sidebar sidebar-offcanvas ${responsive}`} id="sidebar">
       <ul className="nav">
         <li className={`nav-item${activeMenu == 'dashboard' ? ' active' : ''}`}>
           <Link className="nav-link" href="/admin">

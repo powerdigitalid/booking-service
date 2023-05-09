@@ -13460,6 +13460,7 @@ input[type="button"].btn-block {
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 0.25rem;
+  cursor: pointer;
 }
 
 .navbar-toggler:hover, .navbar-toggler:focus {
@@ -28777,13 +28778,13 @@ div.tagsinput span.tag a {
     top: 60px;
     bottom: 0;
     overflow: auto;
-    right: -235px;
+    left: -235px;
     -webkit-transition: all 0.25s ease-out;
     -o-transition: all 0.25s ease-out;
     transition: all 0.25s ease-out;
   }
   .sidebar-offcanvas.active {
-    right: 0;
+    left: 0;
   }
 }
 
@@ -28889,11 +28890,11 @@ div.tagsinput span.tag a {
   transition: transform 0.3s linear;
 }
 
-@media (max-width: 991px) {
+/* @media (max-width: 991px) {
   .navbar .navbar-menu-wrapper .navbar-toggler:not(.navbar-toggler-right) {
     display: none;
   }
-}
+} */
 
 .sidebar-icon-only .navbar .navbar-menu-wrapper .navbar-toggler:not(.navbar-toggler-right) {
   transform: rotate(180deg);
